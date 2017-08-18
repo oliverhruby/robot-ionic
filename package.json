@@ -24,7 +24,7 @@
     "@ionic-native/splash-screen": "^4.1.0",
     "@ionic-native/status-bar": "^4.1.0",
     "@ionic/storage": "2.0.1",
-    "@ngrx/effects": "^4.0.4",
+    "@ngrx/effects": "^4.0.5",
     "@ngrx/store": "^4.0.3",
     "babylonjs": "^3.1.0-alpha1",
     "ionic-angular": "3.6.0",

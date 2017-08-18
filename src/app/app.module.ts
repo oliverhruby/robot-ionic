@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
@@ -12,8 +13,10 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { reducers, metaReducers } from './reducers';
+//import { reducers, metaReducers } from './reducers';
+import { reducers } from './reducers';
 import { CoreModule } from './core/core.module';
+import { TRexEffects } from './core/effects/trex';
 
 
 @NgModule({
@@ -37,6 +40,9 @@ import { CoreModule } from './core/core.module';
      */
     //StoreModule.forRoot(reducers, { metaReducers }),
     StoreModule.forRoot(reducers),
+
+    EffectsModule.forRoot([TRexEffects]),
+    
     CoreModule.forRoot()
   ],
   bootstrap: [IonicApp],

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import * as BABYLON from 'babylonjs';
 import { Widget } from "../../widget/widget";
+import { GyroscopeService } from "../../services/gyroscope.service";
 
 @Component({
   selector: 'app-scene',
@@ -11,13 +12,14 @@ export class SceneComponent extends Widget implements OnInit {
   @ViewChild('mainCanvas') mainCanvas: ElementRef;
 
   constructor(
+    private gyro: GyroscopeService
   ) {
     super();
     this.title = '3D Scene';
   }
 
   ngOnInit() {
-
+    
     // get the reference to the rendering canvas
     let canvas: HTMLCanvasElement = this.mainCanvas.nativeElement;
 

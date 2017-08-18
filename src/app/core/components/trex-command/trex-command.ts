@@ -29,41 +29,37 @@ export class TRexCommandComponent extends Widget implements AfterViewInit {
 
   forward() {
     this.store.dispatch(new trex.UpdateMotors({ lmSpeed: 30, rmSpeed: 30}));
-    // TODO: move this to an effect
-    this.tRexService.motors(30, 30);
   }
 
   left() {
     this.store.dispatch(new trex.UpdateMotors({ lmSpeed: 30, rmSpeed: 0}));
-    // TODO: move this to an effect
-    this.tRexService.motors(30, 0);
   }
 
   right() {
     this.store.dispatch(new trex.UpdateMotors({ lmSpeed: 0, rmSpeed: 30}));
-    // TODO: move this to an effect
-    this.tRexService.motors(0, 30);
   }
 
   stop() {
     this.store.dispatch(new trex.UpdateMotors({ lmSpeed: 0, rmSpeed: 0}));
-    // TODO: move this to an effect
-    this.tRexService.motors(0, 0);
   }
 
   photo() {
+    // TODO: move this to an effect
     this.tRexService.photo();
   }
 
   talk() {
+    // TODO: move this to an effect
     this.tRexService.talk('hello');
   }
 
   status() {
+    // TODO: move this to an effect
     this.tRexService.status();
   }
 
   servo(index, value) {
+    // TODO: move this to an effect
     this.store.dispatch(new trex.UpdateServos(JSON.parse("{\"servo" + index + "\":" + value + "}")));
   }
 

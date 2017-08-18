@@ -22,10 +22,6 @@ export class TRexService {
   }
 
   motors(lmSpeed: number, rmSpeed: number) {
-    this.store.dispatch(new fromTrex.UpdateMotors({
-      rmSpeed: rmSpeed,
-      lmSpeed: lmSpeed
-    }));
     this.ws.send(JSON.stringify({ action: 'motors', lmSpeed: lmSpeed, rmSpeed: rmSpeed }));
   }
 
