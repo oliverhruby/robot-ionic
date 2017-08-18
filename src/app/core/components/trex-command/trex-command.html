@@ -1,0 +1,24 @@
+<div class="widget">
+  <div class="header">{{title}}</div>
+    <div>
+    <input type="button" id="btnLeft" (click)="left()" value="Left">
+    <input type="button" id="btnRight" (click)="right()" value="Right">
+    <input type="button" id="btnForward" (click)="forward()" value="Forward">
+    <input type="button" id="btnStop" (click)="stop()" value="Stop">
+  </div>
+  <div>
+    <input type="button" id="btnStatus" (click)="status()" value="Status">
+    <input type="button" id="btnPhoto" (click)="photo()" value="Photo">
+    <input type="button" id="btnTalk" (click)="talk()" value="Talk">
+  </div>
+  <div class="container"><knob class="skin1" #servo1 [min]="0" [max]="255" [value]="0" [startDegree]="0" [endDegree]="350" (change)="servo(1,$event);"></knob><div class="info">{{servo1.meterValue}}</div></div>
+  <div class="container"><knob class="skin1" #servo2 [min]="0" [max]="255" [value]="0" [startDegree]="0" [endDegree]="350" (change)="servo(2,$event);"></knob><div class="info">{{servo2.meterValue}}</div></div>
+  <div class="container"><knob class="skin1" #servo3 [min]="0" [max]="255" [value]="0" [startDegree]="0" [endDegree]="350" (change)="servo(3,$event);"></knob><div class="info">{{servo3.meterValue}}</div></div>
+  <div class="container"><knob class="skin1" #servo4 [min]="0" [max]="255" [value]="0" [startDegree]="0" [endDegree]="350" (change)="servo(4,$event);"></knob><div class="info">{{servo4.meterValue}}</div></div>
+  <div class="container"><knob class="skin1" #servo5 [min]="0" [max]="255" [value]="0" [startDegree]="0" [endDegree]="350" (change)="servo(5,$event);"></knob><div class="info">{{servo5.meterValue}}</div></div>
+  <div class="container"><knob class="skin1" #servo6 [min]="0" [max]="255" [value]="0" [startDegree]="0" [endDegree]="350" (change)="servo(6,$event);"></knob><div class="info">{{servo6.meterValue}}</div></div>
+  <svg #joy style="width:200px;height:200px;border:1px solid lime">
+    <circle [attr.cx]="(state | async).x*100+100" [attr.cy]="-(state | async).y*100+100" r="5" stroke="lime" stroke-width="3"
+      fill="none" />
+  </svg>
+</div>

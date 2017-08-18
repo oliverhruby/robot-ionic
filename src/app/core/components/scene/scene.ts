@@ -1,19 +1,23 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import * as BABYLON from 'babylonjs';
+import { Widget } from "../../widget/widget";
 
 @Component({
-  selector: 'page-hello-ionic',
-  templateUrl: 'hello-ionic.html'
+  selector: 'app-scene',
+  templateUrl: './scene.html'
 })
-export class HelloIonicPage implements OnInit {
+export class SceneComponent extends Widget implements OnInit {
 
   @ViewChild('mainCanvas') mainCanvas: ElementRef;
-  
-  constructor() {
 
+  constructor(
+  ) {
+    super();
+    this.title = '3D Scene';
   }
 
   ngOnInit() {
+
     // get the reference to the rendering canvas
     let canvas: HTMLCanvasElement = this.mainCanvas.nativeElement;
 
@@ -31,7 +35,7 @@ export class HelloIonicPage implements OnInit {
 
     // Let's try our built-in 'sphere' shape. Params: name, subdivisions, size, scene
     let sphere = BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene);
-
+    
     // This creates and positions a free camera
     var camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 5, -10), scene);
 
