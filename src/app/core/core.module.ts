@@ -9,6 +9,7 @@ import { BatteryComponent } from './components/battery/battery';
 import { CameraComponent } from './components/camera/camera';
 import { ChartComponent } from './components/chart/chart';
 import { CompassComponent } from './components/compass/compass';
+import { GyroscopeComponent } from './components/gyroscope/gyroscope';
 import { SceneComponent } from './components/scene/scene';
 import { SpeedGaugeComponent } from './components/speed-gauge/speed-gauge';
 import { StateComponent } from './components/state/state';
@@ -23,16 +24,20 @@ import { SynthesisService } from './services/synthesis.service';
 import { TRexService } from './services/trex.service';
 import { WebSocketService } from './services/websocket.service';
 
+import { DeviceOrientation } from '@ionic-native/device-orientation';
+import { DeviceMotion } from '@ionic-native/device-motion';
+
 export const COMPONENTS = [
   //AppComponent,
   BatteryComponent,
   CameraComponent,
   ChartComponent,
   CompassComponent,
-  TRexCommandComponent,
+  GyroscopeComponent,
   SceneComponent,
   SpeedGaugeComponent,
   StateComponent,
+  TRexCommandComponent,
   TRexStatusComponent
 ];
 
@@ -50,6 +55,8 @@ export class CoreModule {
     return {
       ngModule: CoreModule,
       providers: [
+        DeviceOrientation,
+        DeviceMotion,
         GamepadService,
         GyroscopeService,
         SpeechSynthesisService,
