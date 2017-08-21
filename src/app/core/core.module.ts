@@ -19,6 +19,7 @@ import { TRexCommandComponent } from './components/trex-command/trex-command';
 import { GamepadService } from './services/gamepad.service';
 import { GyroscopeService } from "./services/gyroscope.service";
 import { SpeechSynthesisService } from './services/speech-synthesis.service';
+import { SynthesisService } from './services/synthesis.service';
 import { TRexService } from './services/trex.service';
 import { WebSocketService } from './services/websocket.service';
 
@@ -52,6 +53,7 @@ export class CoreModule {
         GamepadService,
         GyroscopeService,
         SpeechSynthesisService,
+        SynthesisService,
         TRexService,
         WebSocketService
       ],

@@ -6,7 +6,7 @@ import { MyApp } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
+import { DashboardPage } from '../pages/dashboard/dashboard';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 
@@ -22,7 +22,7 @@ import { TRexEffects } from './core/effects/trex';
 @NgModule({
   declarations: [
     MyApp,
-    HelloIonicPage,
+    DashboardPage,
     ItemDetailsPage,
     ListPage
   ],
@@ -48,7 +48,7 @@ import { TRexEffects } from './core/effects/trex';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HelloIonicPage,
+    DashboardPage,
     ItemDetailsPage,
     ListPage
   ],

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'page-hello-ionic',
-  templateUrl: 'hello-ionic.html'
+  selector: 'page-dashboard',
+  templateUrl: 'dashboard.html'
 })
-export class HelloIonicPage implements OnInit {
+export class DashboardPage implements OnInit {
 
   constructor() {
 
