@@ -36,4 +36,4 @@ before_script:
 script:
   - npm run build
   - cordova platform add android
-  - ionic cordova build android
+  - ionic build android
