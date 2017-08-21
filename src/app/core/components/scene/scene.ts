@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import * as BABYLON from 'babylonjs';
 import { Widget } from "../../widget/widget";
-import { GyroscopeService } from "../../services/gyroscope.service";
 
 @Component({
   selector: 'app-scene',
@@ -12,7 +11,7 @@ export class SceneComponent extends Widget implements OnInit {
   @ViewChild('mainCanvas') mainCanvas: ElementRef;
 
   constructor(
-    private gyro: GyroscopeService
+    // private gyro: GyroscopeService
   ) {
     super();
     this.title = '3D Scene';
@@ -33,7 +32,7 @@ export class SceneComponent extends Widget implements OnInit {
     scene.clearColor = new BABYLON.Color4(0, 0, 0, 0);
 
     // This creates a light, aiming 0,1,0 - to the sky.
-    let light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), scene);
+    new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), scene);
 
     // Let's try our built-in 'sphere' shape. Params: name, subdivisions, size, scene
     let sphere = BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene);

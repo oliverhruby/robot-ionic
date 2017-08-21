@@ -1,4 +1,4 @@
-import { Action, ActionReducer } from '@ngrx/store';
+import { Action } from '@ngrx/store';
 
 export const GAMEPAD_BUTTON_DOWN = 'GAMEPAD_BUTTON_DOWN';
 export const GAMEPAD_BUTTON_UP = 'GAMEPAD_BUTTON_UP';

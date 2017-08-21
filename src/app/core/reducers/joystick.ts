@@ -1,4 +1,3 @@
-import { Action, ActionReducer } from '@ngrx/store';
 import * as joystick from '../actions/joystick';
 
 export interface State {

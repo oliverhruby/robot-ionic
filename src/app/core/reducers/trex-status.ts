@@ -1,4 +1,3 @@
-import { Action } from '@ngrx/store';
 import * as trex from '../actions/trex';
 
 export interface State {

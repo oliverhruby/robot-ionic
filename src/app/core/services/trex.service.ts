@@ -1,4 +1,3 @@
-import { Http } from '@angular/http';
 import { Store } from '@ngrx/store';
 import * as trexCommand from '../reducers/trex-command';
 import * as fromTrex from '../../core/actions/trex';
@@ -10,8 +9,7 @@ export class TRexService {
   private ws: WebSocket;
 
   constructor(
-    private store: Store<trexCommand.State>,
-    private http: Http
+    private store: Store<trexCommand.State>
   ) {
     this.ws = new WebSocket("ws://192.168.0.109:3000");
     let me = this;

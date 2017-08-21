@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 // import { Subscription } from 'rxjs';
 // import { Observable } from 'rxjs/Rx';
 import { Store } from '@ngrx/store';
@@ -20,7 +20,7 @@ export class StateComponent extends Widget {
   constructor(private store: Store<any>) {
     super();
     this.title = 'Application State';
-    store.subscribe((data) => this.state = JSON.stringify(data, undefined, 2));
+    this.store.subscribe((data) => this.state = JSON.stringify(data, undefined, 2));
   }
 
 }

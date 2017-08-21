@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { Observable } from 'rxjs/Rx';
-import { Store } from '@ngrx/store';
 import { Widget } from '../../widget/widget';
 
 /**

@@ -23,7 +23,6 @@ export class TRexCommandComponent extends Widget implements AfterViewInit {
   ) {
     super();
     this.title = 'TRex Commands';
-    let me = this;
     this.state = this.store.select<joystickReducers.State>(createFeatureSelector<joystickReducers.State>('joystick'));
   }
 
@@ -69,7 +68,7 @@ export class TRexCommandComponent extends Widget implements AfterViewInit {
   ngAfterViewInit() {
     const joy = this.joy.nativeElement;
     const mouseDown$ = Observable.fromEvent<MouseEvent>(joy, 'mousedown');
-    const mouseMove$ = Observable.fromEvent<MouseEvent>(joy, 'mousemove');
+    // const mouseMove$ = Observable.fromEvent<MouseEvent>(joy, 'mousemove');
     const mouseUp$ = Observable.fromEvent<MouseEvent>(joy, 'mouseup');
 
     mouseDown$.subscribe(data => this.store.dispatch(
