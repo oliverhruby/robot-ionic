@@ -5,8 +5,8 @@ import * as gyroscopeReducer from '../../reducers/gyroscope';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
-import { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-native/device-orientation';
 import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion';
+import { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-native/device-orientation';
 
 import { Platform } from "ionic-angular";
 

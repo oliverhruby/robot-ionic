@@ -1,13 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
-
 import { Platform, MenuController, Nav } from 'ionic-angular';
-
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { ListPage } from '../pages/list/list';
-
+import { AndroidFullScreen } from '@ionic-native/android-full-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 
 @Component({
   templateUrl: 'app.html'
@@ -17,13 +14,14 @@ export class MyApp {
 
   // make DashboardPage the root (or first) page
   rootPage = DashboardPage;
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(
     public platform: Platform,
     public menu: MenuController,
     public statusBar: StatusBar,
-    public splashScreen: SplashScreen
+    public splashScreen: SplashScreen,
+    private androidFullScreen: AndroidFullScreen
   ) {
     this.initializeApp();
 
@@ -38,7 +36,10 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
+      this.androidFullScreen.isImmersiveModeSupported()
+        .then(() => this.androidFullScreen.immersiveMode())
+        .catch((error: any) => console.log(error));
+      this.statusBar.hide();
       this.splashScreen.hide();
     });
   }

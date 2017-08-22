@@ -10,6 +10,10 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 
+import { AndroidFullScreen } from '@ionic-native/android-full-screen';
+import { BLE } from '@ionic-native/ble';
+import { DeviceMotion } from '@ionic-native/device-motion';
+import { DeviceOrientation } from '@ionic-native/device-orientation';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -53,8 +57,12 @@ import { TRexEffects } from './core/effects/trex';
     ListPage
   ],
   providers: [
-    StatusBar,
+    AndroidFullScreen,
+    BLE,
+    DeviceMotion,
+    DeviceOrientation,
     SplashScreen,
+    StatusBar,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
