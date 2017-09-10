@@ -20,7 +20,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 //import { reducers, metaReducers } from './reducers';
 import { reducers } from './reducers';
 import { CoreModule } from './core/core.module';
+
 import { TRexEffects } from './core/effects/trex';
+import { JoystickEffects } from './core/effects/joystick';
 
 
 @NgModule({
@@ -45,7 +47,10 @@ import { TRexEffects } from './core/effects/trex';
     //StoreModule.forRoot(reducers, { metaReducers }),
     StoreModule.forRoot(reducers),
 
-    EffectsModule.forRoot([TRexEffects]),
+    EffectsModule.forRoot([
+      JoystickEffects,
+      TRexEffects
+    ]),
     
     CoreModule.forRoot()
   ],
