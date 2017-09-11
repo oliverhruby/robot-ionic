@@ -5,16 +5,17 @@ import { ChartsModule } from 'ng2-charts';
 
 //import { AppComponent } from './containers/app';
 
-import { BatteryComponent } from './components/battery/battery';
-import { CameraComponent } from './components/camera/camera';
-import { ChartComponent } from './components/chart/chart';
-import { CompassComponent } from './components/compass/compass';
-import { GyroscopeComponent } from './components/gyroscope/gyroscope';
-import { SceneComponent } from './components/scene/scene';
-import { SpeedGaugeComponent } from './components/speed-gauge/speed-gauge';
-import { StateComponent } from './components/state/state';
-import { TRexStatusComponent } from './components/trex-status/trex-status';
-import { TRexCommandComponent } from './components/trex-command/trex-command';
+import { BatteryComponent } from './components/battery/BatteryComponent';
+import { CameraComponent } from './components/camera/CameraComponent';
+import { ChartComponent } from './components/chart/ChartComponent';
+import { CompassComponent } from './components/compass/CompassComponent';
+import { GamepadComponent } from './components/gamepad/GamepadComponent';
+import { GyroscopeComponent } from './components/gyroscope/GyroscopeComponent';
+import { SceneComponent } from './components/scene/SceneComponent';
+import { SpeedGaugeComponent } from './components/speed-gauge/SpeedGaugeComponent';
+import { StateComponent } from './components/state/StateComponent';
+import { TRexStatusComponent } from './components/trex-status/TRexStatusComponent';
+import { TRexCommandComponent } from './components/trex-command/TRexCommandComponent';
 
 // import { GyroscopeService } from './services/gyroscope';
 import { GamepadService } from './services/gamepad.service';
@@ -33,6 +34,7 @@ export const COMPONENTS = [
   CameraComponent,
   ChartComponent,
   CompassComponent,
+  GamepadComponent,
   GyroscopeComponent,
   SceneComponent,
   SpeedGaugeComponent,

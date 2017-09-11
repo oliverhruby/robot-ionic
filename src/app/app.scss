@@ -14,3 +14,12 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.widget {
+    border: 1px solid lime;
+    display: inline-block;
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    background: #051505;
+}
