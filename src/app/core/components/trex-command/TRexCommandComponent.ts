@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { TRexService } from '../../services/trex.service';
+import { TRexService } from '../../services/TRexService';
 import { Widget } from '../../widget/widget';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent';

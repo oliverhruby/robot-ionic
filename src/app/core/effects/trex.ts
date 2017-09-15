@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
-import { TRexService } from '../services/trex.service';
+import { TRexService } from '../services/TRexService';
 import * as trex from '../actions/trex';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/filter';

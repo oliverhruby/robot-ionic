@@ -7,9 +7,11 @@ export interface State {
   ls: any;
   rs: any;
   buttons: any;
+  gamepad: any;
 };
 
 export const initialState: State = {
+  gamepad: null,
   index: null,
   timestamp: null,
   connected: null,
@@ -28,16 +30,17 @@ export function reducer(state = initialState, action: gamepad.GamepadActions): S
       return state;
     case gamepad.GAMEPAD_CONNECT:
       state.connected = true;
+      state.gamepad = action.payload;
       return state;
     case gamepad.GAMEPAD_DISCONNECT:
       state.connected = false;
       return state;
-    // case gamepad.GAMEPAD_UPDATE_LS:
-    //   state.ls = action.payload;
-    //   return state;
-    // case gamepad.GAMEPAD_UPDATE_RS:
-    //   state.rs = action.payload;
-    //   return state;
+    case gamepad.GAMEPAD_UPDATE_LS:
+       state.ls = action.payload;
+       return state;
+    case gamepad.GAMEPAD_UPDATE_RS:
+       state.rs = action.payload;
+       return state;
     default:
       return state;
   }

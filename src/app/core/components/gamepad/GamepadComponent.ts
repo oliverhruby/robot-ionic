@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { Widget } from '../../widget/widget';
-import { Store } from '@ngrx/store';
-import * as gamepad from '../../actions/gamepad';
+import { Store, createFeatureSelector } from '@ngrx/store';
 import * as gamepadReducers from '../../reducers/gamepad';
+import { Observable } from 'rxjs/Observable';
+import * as BABYLON from 'babylonjs';
+import { GamepadService } from '../../services/GamepadService';
 
 /**
  * Gamepad controller visualization
@@ -13,14 +15,14 @@ import * as gamepadReducers from '../../reducers/gamepad';
 })
 export class GamepadComponent extends Widget {
 
-  gamepads: Gamepad[]
+  state$: Observable<gamepadReducers.State>;
 
   constructor(
-    private store: Store<gamepadReducers.State>,
+    private gamepadService: GamepadService,
+    private store: Store<gamepadReducers.State>
   ) {
     super();
-    this.gamepads = navigator.getGamepads();
-    this.store.dispatch(new gamepad.Connect({}));
+    this.state$ = this.store.select(createFeatureSelector<gamepadReducers.State>('gamepad'));
   }
 
 }

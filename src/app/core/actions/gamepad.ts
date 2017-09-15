@@ -27,8 +27,20 @@ export class Disconnect implements Action {
     constructor(public payload: any) { }
 }
 
+export class UpdateLS implements Action {
+    readonly type = GAMEPAD_UPDATE_LS;
+    constructor(public payload: any) { }
+}
+
+export class UpdateRS implements Action {
+    readonly type = GAMEPAD_UPDATE_RS;
+    constructor(public payload: any) { }
+}
+
 export type GamepadActions =
     ButtonDown |
     ButtonUp |
     Connect |
-    Disconnect;
+    Disconnect |
+    UpdateRS |
+    UpdateLS;

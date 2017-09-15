@@ -18,12 +18,12 @@ import { TRexStatusComponent } from './components/trex-status/TRexStatusComponen
 import { TRexCommandComponent } from './components/trex-command/TRexCommandComponent';
 
 // import { GyroscopeService } from './services/gyroscope';
-import { GamepadService } from './services/gamepad.service';
-import { GyroscopeService } from "./services/gyroscope.service";
-import { SpeechSynthesisService } from './services/speech-synthesis.service';
-import { SynthesisService } from './services/synthesis.service';
-import { TRexService } from './services/trex.service';
-import { WebSocketService } from './services/websocket.service';
+import { GamepadService } from './services/GamepadService';
+import { GyroscopeService } from "./services/GyroscopeService";
+import { SpeechSynthesisService } from './services/SpeechSynthesisService';
+import { SynthesisService } from './services/SynthesisService';
+import { TRexService } from './services/TRexService';
+import { WebSocketService } from './services/WebSocketService';
 
 import { DeviceOrientation } from '@ionic-native/device-orientation';
 import { DeviceMotion } from '@ionic-native/device-motion';
@@ -65,7 +65,7 @@ export class CoreModule {
         SynthesisService,
         TRexService,
         WebSocketService
-      ],
+      ]
     };
   }
 }

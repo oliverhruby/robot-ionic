@@ -1,6 +1,7 @@
 <div class="widget">
   <div class="header">Gamepad</div>
-  <div *ngFor="let gamepad of gamepads">
+  <div>{{(state$ | async) | json}}</div>
+  <!-- <div *ngFor="let gamepad of gamepads | async">
     <div *ngIf="gamepad">{{gamepad.id}}</div>
-  </div>
+  </div> -->
 </div>
