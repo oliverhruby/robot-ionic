@@ -3,8 +3,6 @@ import { Widget } from '../../widget/widget';
 import { Store, createFeatureSelector } from '@ngrx/store';
 import * as gamepadReducers from '../../reducers/gamepad';
 import { Observable } from 'rxjs/Observable';
-import * as BABYLON from 'babylonjs';
-import { GamepadService } from '../../services/GamepadService';
 
 /**
  * Gamepad controller visualization
@@ -18,7 +16,6 @@ export class GamepadComponent extends Widget {
   state$: Observable<gamepadReducers.State>;
 
   constructor(
-    private gamepadService: GamepadService,
     private store: Store<gamepadReducers.State>
   ) {
     super();

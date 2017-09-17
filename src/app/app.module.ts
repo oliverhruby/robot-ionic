@@ -21,8 +21,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { reducers } from './reducers';
 import { CoreModule } from './core/core.module';
 
+// Important: effects build ok only if referenced in the proper order
 import { TRexEffects } from './core/effects/trex';
 import { JoystickEffects } from './core/effects/joystick';
+import { GamepadEffects } from './core/effects/gamepad';
 
 
 @NgModule({
@@ -48,8 +50,9 @@ import { JoystickEffects } from './core/effects/joystick';
     StoreModule.forRoot(reducers),
 
     EffectsModule.forRoot([
+      TRexEffects,
       JoystickEffects,
-      TRexEffects
+      GamepadEffects,
     ]),
     
     CoreModule.forRoot()
