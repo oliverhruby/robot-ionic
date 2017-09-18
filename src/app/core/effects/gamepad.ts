@@ -25,7 +25,7 @@ export class GamepadEffects {
         .do((action) => {
             try {
                 this.store.dispatch(
-                    new joystick.Update({ x: action.payload.x, y: action.payload.y })
+                    new joystick.Update({ x: action.payload.x, y: -action.payload.y })
                 );
             } catch (ex) { }
         })

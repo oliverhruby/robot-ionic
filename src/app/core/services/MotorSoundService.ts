@@ -71,7 +71,7 @@ export class MotorSoundService {
   private generate() {
     let data = [];
     let lastValue = 1;
-    let lastPosition = 0;
+    // let lastPosition = 0;
     let nextValue, nextPosition;
 
     data.push(lastValue);

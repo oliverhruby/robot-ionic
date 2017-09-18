@@ -20,7 +20,7 @@ import { TRexCommandComponent } from './components/trex-command/TRexCommandCompo
 // import { GyroscopeService } from './services/gyroscope';
 import { GamepadService } from './services/GamepadService';
 import { GyroscopeService } from "./services/GyroscopeService";
-import { MotorSoundService } from './services/MotorSoundService';
+// import { MotorSoundService } from './services/MotorSoundService';
 import { SpeechSynthesisService } from './services/SpeechSynthesisService';
 import { SynthesisService } from './services/SynthesisService';
 import { TRexService } from './services/TRexService';
@@ -62,7 +62,7 @@ export class CoreModule {
         DeviceMotion,
         GamepadService,
         GyroscopeService,
-        MotorSoundService,
+        // MotorSoundService,
         SpeechSynthesisService,
         SynthesisService,
         TRexService,
