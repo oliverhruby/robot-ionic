@@ -27,15 +27,19 @@ export class TRexCommandComponent extends Widget implements AfterViewInit {
   }
 
   forward() {
-    this.store.dispatch(new trex.UpdateMotors({ lmSpeed: 30, rmSpeed: 30}));
+    this.store.dispatch(new trex.UpdateMotors({ lmSpeed: 50, rmSpeed: 50}));
+  }
+
+  back() {
+    this.store.dispatch(new trex.UpdateMotors({ lmSpeed: -50, rmSpeed: -50}));
   }
 
   left() {
-    this.store.dispatch(new trex.UpdateMotors({ lmSpeed: 30, rmSpeed: 0}));
+    this.store.dispatch(new trex.UpdateMotors({ lmSpeed: 50, rmSpeed: 0}));
   }
 
   right() {
-    this.store.dispatch(new trex.UpdateMotors({ lmSpeed: 0, rmSpeed: 30}));
+    this.store.dispatch(new trex.UpdateMotors({ lmSpeed: 0, rmSpeed: 50}));
   }
 
   stop() {

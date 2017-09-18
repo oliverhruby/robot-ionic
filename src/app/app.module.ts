@@ -6,9 +6,8 @@ import { MyApp } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import { DashboardPage } from '../pages/dashboard/dashboard';
-import { ItemDetailsPage } from '../pages/item-details/item-details';
-import { ListPage } from '../pages/list/list';
+import { DashboardPage } from '../pages/dashboard/DashboardPage';
+import { CameraPage } from '../pages/camera/CameraPage';
 
 import { AndroidFullScreen } from '@ionic-native/android-full-screen';
 import { BLE } from '@ionic-native/ble';
@@ -31,8 +30,7 @@ import { GamepadEffects } from './core/effects/gamepad';
   declarations: [
     MyApp,
     DashboardPage,
-    ItemDetailsPage,
-    ListPage
+    CameraPage
   ],
   imports: [
     BrowserModule,
@@ -61,8 +59,7 @@ import { GamepadEffects } from './core/effects/gamepad';
   entryComponents: [
     MyApp,
     DashboardPage,
-    ItemDetailsPage,
-    ListPage
+    CameraPage
   ],
   providers: [
     AndroidFullScreen,

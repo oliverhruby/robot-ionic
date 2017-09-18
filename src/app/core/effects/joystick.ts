@@ -19,22 +19,24 @@ export class JoystickEffects {
     updateMotors$ = this.action$
         .ofType<joystick.Update>(joystick.JOYSTICK_UPDATE)
         .do((action) => this.store.dispatch(
-            new trex.UpdateMotors(this.translate(action.payload.x * 128, action.payload.y * 128))
+            new trex.UpdateMotors(this.translate(action.payload.x * 255, action.payload.y * 255))
         ))
         .filter(() => null);
 
     /**
      * Translates the joystick position to differencial
      * motor speed values
-     * @param x Joystick x position (-128..+127)
-     * @param y Joystick y position (-128..+127)
+     * @param x Joystick x position ( -(range+1) .. +range )
+     * @param y Joystick y position ( -(range+1) .. +range )
      * @param threshold The threshold at which the pivot action starts
      * This threshold is measured in units on the Y-axis
      * away from the X-axis (Y=0). A greater value will assign
      * more of the joystick's range to pivot actions.
-     *      Allowable range: (0..+127)  Joystick y position (-128..+127)
+     *      Allowable range: (0..+range)  Joystick y position (-(range+1)..+range)
      */
     private translate(x: number, y: number, threshold: number = 32.0) {
+        const range = 255.0;
+
         // OUTPUTS
         let nMotMixL: number;           // Motor (left)  mixed output           (-128..+127)
         let nMotMixR: number;           // Motor (right) mixed output           (-128..+127)
@@ -47,17 +49,17 @@ export class JoystickEffects {
         // Calculate Drive Turn output due to Joystick X input
         if (y >= 0) {
             // Forward
-            nMotPremixL = (x >= 0) ? 127.0 : (127.0 + x);
-            nMotPremixR = (x >= 0) ? (127.0 - x) : 127.0;
+            nMotPremixL = (x >= 0) ? range : (range + x);
+            nMotPremixR = (x >= 0) ? (range - x) : range;
         } else {
             // Reverse
-            nMotPremixL = (x >= 0) ? (127.0 - x) : 127.0;
-            nMotPremixR = (x >= 0) ? 127.0 : (127.0 + x);
+            nMotPremixL = (x >= 0) ? (range - x) : range;
+            nMotPremixR = (x >= 0) ? range : (range + x);
         }
 
         // Scale Drive output due to Joystick Y input (throttle)
-        nMotPremixL = nMotPremixL * y / 128.0;
-        nMotPremixR = nMotPremixR * y / 128.0;
+        nMotPremixL = nMotPremixL * y / (range + 1);
+        nMotPremixR = nMotPremixR * y / (range + 1);
 
         // Now calculate pivot amount
         // - Strength of pivot (nPivSpeed) based on Joystick X input
@@ -69,8 +71,7 @@ export class JoystickEffects {
         nMotMixL = (1.0 - fPivScale) * nMotPremixL + fPivScale * (nPivSpeed);
         nMotMixR = (1.0 - fPivScale) * nMotPremixR + fPivScale * (-nPivSpeed);
 
-        return { lmSpeed: nMotMixL, rmSpeed: nMotMixR }
+        return { lmSpeed: Math.round(nMotMixL), rmSpeed: Math.round(nMotMixR) }
     }
-
 
 }

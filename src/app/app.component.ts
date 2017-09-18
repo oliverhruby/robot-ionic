@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
-import { DashboardPage } from '../pages/dashboard/dashboard';
-import { ListPage } from '../pages/list/list';
+import { DashboardPage } from '../pages/dashboard/DashboardPage';
+import { CameraPage } from '../pages/camera/CameraPage';
 import { AndroidFullScreen } from '@ionic-native/android-full-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,7 +28,7 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Dashboard', component: DashboardPage },
-      { title: 'Camera', component: ListPage }
+      { title: 'Camera', component: CameraPage }
     ];
   }
 

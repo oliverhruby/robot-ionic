@@ -24,9 +24,15 @@ export class GamepadEffects {
         .ofType<gamepad.UpdateLS>(gamepad.GAMEPAD_UPDATE_LS)
         .do((action) => {
             try {
-                this.store.dispatch(
-                    new joystick.Update({ x: action.payload.x, y: -action.payload.y })
-                );
+                if (Math.abs(action.payload.x) < 0.1 && Math.abs(action.payload.y) < 0.1) {
+                    this.store.dispatch(
+                        new joystick.Update({ x: 0, y: 0 })
+                    );
+                } else {
+                    this.store.dispatch(
+                        new joystick.Update({ x: action.payload.x, y: -action.payload.y })
+                    );
+                }
             } catch (ex) { }
         })
         .filter(() => null);
