@@ -10,6 +10,7 @@
   <div>
     <input type="button" id="btnStatus" (click)="status()" value="Status">
     <input type="button" id="btnPhoto" (click)="photo()" value="Photo">
+    <input (input)="command = $event.target.value" type="text" id="txtCommand">
     <input type="button" id="btnTalk" (click)="talk()" value="Talk">
   </div>
   <div class="container"><knob class="skin1" #servo1 [min]="-255" [max]="255" [value]="0" [startDegree]="0" [endDegree]="350" (change)="servo(1,$event);"></knob><div class="info">{{servo1.meterValue}}</div></div>

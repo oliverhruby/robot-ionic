@@ -16,6 +16,7 @@ import * as trex from '../../actions/trex';
 export class TRexCommandComponent extends Widget implements AfterViewInit {
   pressed: boolean = false;
   state: Observable<joystickReducers.State>;
+  command: string;
 
   constructor(
     private store: Store<joystickReducers.State>,
@@ -53,7 +54,7 @@ export class TRexCommandComponent extends Widget implements AfterViewInit {
 
   talk() {
     // TODO: move this to an effect
-    this.tRexService.talk('hello');
+    this.tRexService.talk(this.command);
   }
 
   status() {
