@@ -27,6 +27,8 @@ export class GamepadService {
           let xbox360pad = gamepad;
           xbox360pad.onlefttriggerchanged((data) => me.store.dispatch(new gamepadA.UpdateLS(data)));
           xbox360pad.onrighttriggerchanged((data) => me.store.dispatch(new gamepadA.UpdateLS(data)));
+          xbox360pad.ondpaddown((data) => me.store.dispatch(new gamepadA.ButtonDown(data)));
+          xbox360pad.ondpadup((data) => me.store.dispatch(new gamepadA.ButtonUp(data)));
           xbox360pad.onbuttondown(function (button) {
             me.store.dispatch(new gamepadA.ButtonDown(button));
           });

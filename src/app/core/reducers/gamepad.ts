@@ -26,7 +26,7 @@ export function reducer(state = initialState, action: gamepad.GamepadActions): S
       state.buttons = action.payload;
       return state;
     case gamepad.GAMEPAD_BUTTON_UP:
-      state.buttons = action.payload;
+      state.buttons = 0;
       return state;
     case gamepad.GAMEPAD_CONNECT:
       state.connected = true;

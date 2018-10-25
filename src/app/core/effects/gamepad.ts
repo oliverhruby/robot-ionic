@@ -37,4 +37,44 @@ export class GamepadEffects {
         })
         .filter(() => null);
 
+    /**
+     * Tracks the software joystick based on the gamepad buttons
+     */
+    @Effect()
+    updateJoystick2$ = this.action$
+        .ofType<gamepad.ButtonDown>(gamepad.GAMEPAD_BUTTON_DOWN)
+        .do((action) => {
+            if (action.payload === 0) {
+                this.store.dispatch(
+                    new joystick.Update({ x: 0, y: 1 })
+                );
+            } else if (action.payload === 1) {
+                this.store.dispatch(
+                    new joystick.Update({ x: 0, y: -1 })
+                );
+            } else if (action.payload === 2) {
+                this.store.dispatch(
+                    new joystick.Update({ x: -1, y: 0 })
+                );
+            } else if (action.payload === 3) {
+                this.store.dispatch(
+                    new joystick.Update({ x: 1, y: 0 })
+                );
+            }
+        })
+        .filter(() => null);
+
+    /**
+     * Tracks the software joystick based on the gamepad buttons
+     */
+    @Effect()
+    updateJoystick3$ = this.action$
+        .ofType<gamepad.ButtonDown>(gamepad.GAMEPAD_BUTTON_UP)
+        .do((action) => {
+            this.store.dispatch(
+                new joystick.Update({ x: 0, y: 0 })
+            );
+        })
+        .filter(() => null);
+
 }
